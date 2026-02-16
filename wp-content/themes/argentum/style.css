@@ -1,0 +1,28 @@
+
+
+
+.woocommerce-store-notice,
+.woocommerce-breadcrumb {
+    display: none !important;
+}
+
+.woocommerce-MyAccount-navigation {
+    display: none !important;
+}
+
+#wpadminbar {
+    display: none !important;
+}
+
+body.admin-bar {
+    margin-top: 0 !important;
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+body {
+    padding-top: 0 !important;
+}
+
