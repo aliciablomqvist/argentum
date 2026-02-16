@@ -186,5 +186,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('✨ Argentum theme loaded successfully');
+    console.log('Argentum theme loaded successfully');
 });
