@@ -1288,3 +1288,120 @@ ul.products li.product img {
     content: none !important;
 }
 
+
+@media (max-width: 768px) {
+    .argentum-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .argentum-logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .argentum-header-actions {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .argentum-product-hero {
+        padding: 2rem 1.5rem;
+    }
+    
+    .argentum-product-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .argentum-product-title {
+        font-size: 2rem;
+    }
+    
+    .argentum-description-section,
+    .argentum-related-section,
+    .argentum-related-premium {
+        padding: 3rem 1.5rem;
+    }
+    
+    .argentum-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .argentum-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .argentum-related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .argentum-product-title {
+        font-size: 1.8rem;
+    }
+    
+    .woocommerce ul.products {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .argentum-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce-tabs ul.tabs {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .woocommerce-Tabs-panel {
+        padding: 1.5rem;
+    }
+    
+    .woocommerce div.product div.images,
+    .woocommerce div.product div.summary {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .woocommerce ul.products li.product img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .related.products ul.products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce-cart table.cart td {
+        padding: 0.8rem;
+    }
+    
+    .woocommerce-checkout input.input-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .argentum-header-inner {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
