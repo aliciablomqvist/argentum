@@ -1027,8 +1027,6 @@ ul.products li.product img {
     object-fit: cover;
 }
 
-
-
 .woocommerce-tabs {
     max-width: 900px;
     margin: 0 auto;
@@ -1406,7 +1404,6 @@ ul.products li.product img {
     }
 }
 
-/* Hamburger knapp */
 .argentum-hamburger {
     display: none;
     background: none;
@@ -1421,7 +1418,6 @@ ul.products li.product img {
     stroke: #2C2C2C;
 }
 
-/* Mobile overlay */
 .argentum-mobile-overlay {
     display: none;
     position: fixed;
@@ -1432,7 +1428,6 @@ ul.products li.product img {
     transition: opacity 0.3s ease;
 }
 
-/* Mobile menu */
 .argentum-mobile-menu {
     display: none;
     position: fixed;
@@ -1495,5 +1490,36 @@ body.argentum-menu-open {
     
     .argentum-nav {
         display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .argentum-hero h1,
+    .wp-block-cover h1,
+    .wp-block-cover .wp-block-heading {
+        font-size: 2.8rem !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.1 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    .wp-block-cover p {
+        font-size: 1rem !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    .wp-block-cover .wp-block-button__link,
+    .wp-block-cover .wp-element-button {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+        letter-spacing: 0.1em !important;
+        padding: 0.9rem 2rem !important;
+        display: inline-block !important;
+    }
+    
+    .wp-block-cover {
+        min-height: 85vh !important;
     }
 }

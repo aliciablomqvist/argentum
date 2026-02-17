@@ -36,11 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (target) {
                     const offset = 100;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             }
         });
@@ -53,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             void cartCount.offsetWidth;
             cartCount.classList.add('pulse');
         });
-        
         cartObserver.observe(cartCount, {
             childList: true,
             characterData: true,
@@ -63,133 +58,105 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const products = document.querySelectorAll('.woocommerce ul.products li.product');
     products.forEach(product => {
-        product.addEventListener('mouseenter', function() {
-            this.style.zIndex = '10';
-        });
-        
-        product.addEventListener('mouseleave', function() {
-            this.style.zIndex = '1';
-        });
+        product.addEventListener('mouseenter', function() { this.style.zIndex = '10'; });
+        product.addEventListener('mouseleave', function() { this.style.zIndex = '1'; });
     });
     
     if ('loading' in HTMLImageElement.prototype) {
         const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.dataset.src || img.src;
-        });
+        images.forEach(img => { img.src = img.dataset.src || img.src; });
     } else {
         const script = document.createElement('script');
         script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
         document.body.appendChild(script);
     }
-    
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
 
     const header = document.querySelector('.argentum-header-inner');
-    if (!header) return;
 
-    const nav = document.querySelector('.argentum-nav');
+    if (header) {
+        const nav = document.querySelector('.argentum-nav');
 
-    const hamburger = document.createElement('button');
-    hamburger.classList.add('argentum-hamburger');
-    hamburger.setAttribute('aria-label', 'Öppna meny');
-    hamburger.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
-        <line x1="3" y1="7" x2="21" y2="7"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="17" x2="21" y2="17"/>
-    </svg>`;
+        const hamburger = document.createElement('button');
+        hamburger.classList.add('argentum-hamburger');
+        hamburger.setAttribute('aria-label', 'Öppna meny');
+        hamburger.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round">
+            <line x1="3" y1="7" x2="21" y2="7"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>`;
 
-    const overlay = document.createElement('div');
-    overlay.classList.add('argentum-mobile-overlay');
+        const overlay = document.createElement('div');
+        overlay.classList.add('argentum-mobile-overlay');
+        document.body.appendChild(overlay);
 
-    const mobileMenu = document.createElement('div');
-    mobileMenu.classList.add('argentum-mobile-menu');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.classList.add('argentum-mobile-menu');
+        mobileMenu.style.cssText = 'display:none; transform: translateX(100%); transition: transform 0.3s ease;';
 
-    const closeBtn = document.createElement('button');
-    closeBtn.classList.add('argentum-mobile-menu-close');
-    closeBtn.innerHTML = '✕';
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('argentum-mobile-menu-close');
+        closeBtn.innerHTML = '✕';
 
-    const navLinks = nav ? nav.querySelectorAll('a') : [];
-    const ul = document.createElement('ul');
+        const navLinks = nav ? nav.querySelectorAll('a') : [];
+        const ul = document.createElement('ul');
 
-    navLinks.forEach(function(link) {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.textContent = link.textContent.trim();
-        a.addEventListener('click', closeMenu);
-        li.appendChild(a);
-        ul.appendChild(li);
-    });
-
-    mobileMenu.appendChild(closeBtn);
-    mobileMenu.appendChild(ul);
-    document.body.appendChild(overlay);
-    document.body.appendChild(mobileMenu);
-
-    const actions = document.querySelector('.argentum-header-actions');
-    if (actions) {
-        header.insertBefore(hamburger, actions);
-    } else {
-        header.appendChild(hamburger);
-    }
-
-    function openMenu() {
-        mobileMenu.style.display = 'block';
-        overlay.style.display = 'block';
-        document.body.classList.add('argentum-menu-open');
-        requestAnimationFrame(function() {
-            mobileMenu.style.transform = 'translateX(0)';
-            overlay.style.opacity = '1';
+        navLinks.forEach(function(link) {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.textContent = link.textContent.trim();
+            a.addEventListener('click', closeMenu);
+            li.appendChild(a);
+            ul.appendChild(li);
         });
-    }
 
-    function closeMenu() {
-        mobileMenu.style.transform = 'translateX(100%)';
-        overlay.style.opacity = '0';
-        document.body.classList.remove('argentum-menu-open');
-        setTimeout(function() {
-            mobileMenu.style.display = 'none';
-            overlay.style.display = 'none';
-        }, 300);
-    }
+        mobileMenu.appendChild(closeBtn);
+        mobileMenu.appendChild(ul);
+        document.body.appendChild(mobileMenu);
 
-    hamburger.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeMenu();
-    });
-
-    function checkSize() {
-        if (window.innerWidth <= 1024) {
-            hamburger.style.display = 'block';
+        const actions = header.querySelector('.argentum-header-actions');
+        if (actions) {
+            header.insertBefore(hamburger, actions);
         } else {
-            hamburger.style.display = 'none';
-            closeMenu();
+            header.appendChild(hamburger);
         }
-    }
 
-    checkSize();
-    window.addEventListener('resize', checkSize);
-});
+        function openMenu() {
+            mobileMenu.style.display = 'block';
+            overlay.style.display = 'block';
+            document.body.classList.add('argentum-menu-open');
+            requestAnimationFrame(function() {
+                mobileMenu.style.transform = 'translateX(0)';
+                overlay.style.opacity = '1';
+            });
+        }
+
+        function closeMenu() {
+            mobileMenu.style.transform = 'translateX(100%)';
+            overlay.style.opacity = '0';
+            document.body.classList.remove('argentum-menu-open');
+            setTimeout(function() {
+                mobileMenu.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        function checkSize() {
+            hamburger.style.display = window.innerWidth <= 1024 ? 'block' : 'none';
+            if (window.innerWidth > 1024) closeMenu();
+        }
+
+        checkSize();
+        window.addEventListener('resize', checkSize);
+    }
     
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add_to_cart_button') || 
@@ -205,10 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.remove('loading');
                 button.classList.add('added');
                 button.textContent = 'Added to cart';
-                
-                setTimeout(() => {
-                    button.classList.remove('added');
-                }, 2000);
+                setTimeout(() => { button.classList.remove('added'); }, 2000);
             }, 500);
         }
     });
@@ -217,14 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateParallax() {
         const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.parallax-section');
-        
-        parallaxElements.forEach(element => {
-            const speed = 0.5;
-            const yPos = -(scrolled * speed);
-            element.style.backgroundPosition = `center ${yPos}px`;
+        document.querySelectorAll('.parallax-section').forEach(element => {
+            element.style.backgroundPosition = `center ${-(scrolled * 0.5)}px`;
         });
-        
         ticking = false;
     }
     
@@ -235,8 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    const productImages = document.querySelectorAll('.woocommerce-product-gallery__image');
-    productImages.forEach((image, index) => {
+    document.querySelectorAll('.woocommerce-product-gallery__image').forEach((image, index) => {
         image.style.animationDelay = `${index * 0.1}s`;
     });
     
@@ -247,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchToggle.addEventListener('click', function(e) {
             e.preventDefault();
             searchForm.classList.toggle('active');
-            
             if (searchForm.classList.contains('active')) {
                 searchForm.querySelector('input[type="search"]').focus();
             }
@@ -255,24 +212,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     let lastScroll = 0;
-    const header = document.querySelector('.site-header');
+    const siteHeader = document.querySelector('.site-header');
     
-    if (header) {
+    if (siteHeader) {
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            if (currentScroll > lastScroll && currentScroll > 200) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            
+            siteHeader.classList.toggle('scrolled', currentScroll > 100);
+            siteHeader.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 200);
             lastScroll = currentScroll;
         });
     }
