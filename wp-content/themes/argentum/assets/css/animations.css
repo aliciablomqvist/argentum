@@ -725,6 +725,7 @@ body.woocommerce-page > nav:not(.wp-block-navigation) {
     gap: 2.5rem;
     flex: 1;
     justify-content: center;
+    padding-right: 40px;
 }
 
 .argentum-nav a {
@@ -777,18 +778,7 @@ body.woocommerce-page > nav:not(.wp-block-navigation) {
     color: #C0C0C0;
 }
 
-.cart-count {
-    display: inline-block;
-    background: #2C2C2C;
-    color: #FFFFFF;
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    border-radius: 12px;
-    min-width: 20px;
-    text-align: center;
-    margin-left: 0.3rem;
-}
+
 
 @media (max-width: 1024px) {
     .argentum-nav {
