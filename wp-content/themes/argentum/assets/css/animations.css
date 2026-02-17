@@ -725,7 +725,7 @@ body.woocommerce-page > nav:not(.wp-block-navigation) {
     gap: 2.5rem;
     flex: 1;
     justify-content: center;
-    padding-right: 60px;
+    padding-right: 80px;
 }
 
 .argentum-nav a {
@@ -1403,5 +1403,97 @@ ul.products li.product img {
     .argentum-header-inner {
         flex-wrap: wrap;
         gap: 1rem;
+    }
+}
+
+/* Hamburger knapp */
+.argentum-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.argentum-hamburger svg {
+    width: 24px;
+    height: 24px;
+    stroke: #2C2C2C;
+}
+
+/* Mobile overlay */
+.argentum-mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mobile menu */
+.argentum-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    background: #FFFFFF;
+    z-index: 10000;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.argentum-mobile-menu-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #2C2C2C;
+    padding: 0.5rem;
+}
+
+.argentum-mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.argentum-mobile-menu ul li {
+    border-bottom: 1px solid rgba(224,224,224,0.5);
+}
+
+.argentum-mobile-menu ul li a {
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2C2C2C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.argentum-mobile-menu ul li a:hover {
+    color: #C0C0C0;
+}
+
+body.argentum-menu-open {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .argentum-hamburger {
+        display: block;
+    }
+    
+    .argentum-nav {
+        display: none !important;
     }
 }
