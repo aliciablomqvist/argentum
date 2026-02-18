@@ -553,6 +553,47 @@ html {
     }
 }
 
+@media (max-width: 1024px) {
+    .argentum-header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .argentum-logo {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    .argentum-nav {
+        display: none !important;
+    }
+
+    .argentum-header-actions {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-left: auto;
+    }
+
+    .argentum-hamburger {
+        display: block !important;
+        order: 2;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .argentum-hamburger svg {
+        width: 24px;
+        height: 24px;
+        stroke: #2C2C2C;
+        stroke-width: 2;
+    }
+}
 
 .woocommerce-ordering select,
 .woocommerce .woocommerce-ordering select {
@@ -1479,29 +1520,30 @@ body.argentum-menu-open {
     }
 }
 @media (max-width: 768px) {
-    .hero-section h1,
     .wp-block-cover h1,
-    .wp-block-cover .wp-block-heading {
-        font-size: 2.5rem !important;
-        letter-spacing: 0.08em !important;
-        line-height: 1.2 !important;
+    .wp-block-cover .wp-block-heading,
+    .hero-section h1 {
+        font-size: 2.8rem !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.1 !important;
         white-space: normal !important;
         word-break: break-word !important;
         writing-mode: horizontal-tb !important;
         text-orientation: mixed !important;
+        transform: none !important;
     }
 
     .wp-block-cover p {
-        font-size: 0.95rem !important;
-        letter-spacing: 0.03em !important;
-        line-height: 1.6 !important;
+        font-size: 1rem !important;
+        letter-spacing: 0.05em !important;
     }
 
-    .wp-block-cover .wp-block-button,
     .wp-block-cover .wp-block-buttons {
-        width: 100% !important;
         display: flex !important;
+        flex-direction: row !important;
         justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
     }
 
     .wp-block-cover .wp-block-button__link,
@@ -1510,32 +1552,19 @@ body.argentum-menu-open {
         text-orientation: mixed !important;
         transform: none !important;
         letter-spacing: 0.1em !important;
-        padding: 1rem 2rem !important;
+        padding: 0.9rem 2rem !important;
         display: inline-block !important;
         width: auto !important;
-        max-width: 90% !important;
-        text-align: center !important;
         white-space: nowrap !important;
     }
     
-    .wp-block-cover.hero-section {
-        min-height: 70vh !important;
-    }
-
-    .wp-block-cover__inner-container {
-        padding: 2rem 1rem !important;
+    .wp-block-cover {
+        min-height: 85vh !important;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-section h1,
     .wp-block-cover h1 {
-        font-size: 2rem !important;
-        letter-spacing: 0.05em !important;
-    }
-
-    .wp-block-cover .wp-block-button__link {
-        font-size: 0.8rem !important;
-        padding: 0.9rem 1.5rem !important;
+        font-size: 2.2rem !important;
     }
 }

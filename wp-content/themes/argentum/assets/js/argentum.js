@@ -71,92 +71,82 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(script);
     }
 
-    const header = document.querySelector('.argentum-header-inner');
+const header = document.querySelector('.argentum-header-inner');
 
-    if (header) {
-        const nav = document.querySelector('.argentum-nav');
+if (header) {
+    const nav = document.querySelector('.argentum-nav');
+    const actions = document.querySelector('.argentum-header-actions');
 
-        const hamburger = document.createElement('button');
-        hamburger.classList.add('argentum-hamburger');
-        hamburger.setAttribute('aria-label', 'Öppna meny');
-        hamburger.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round">
-            <line x1="3" y1="7" x2="21" y2="7"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="17" x2="21" y2="17"/>
-        </svg>`;
+    const hamburger = document.createElement('button');
+    hamburger.classList.add('argentum-hamburger');
+    hamburger.setAttribute('aria-label', 'Öppna meny');
+    hamburger.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="7" x2="21" y2="7"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="17" x2="21" y2="17"/>
+    </svg>`;
 
-        const overlay = document.createElement('div');
-        overlay.classList.add('argentum-mobile-overlay');
-        document.body.appendChild(overlay);
-
-        const mobileMenu = document.createElement('div');
-        mobileMenu.classList.add('argentum-mobile-menu');
-        mobileMenu.style.cssText = 'display:none; transform: translateX(100%); transition: transform 0.3s ease;';
-
-        const closeBtn = document.createElement('button');
-        closeBtn.classList.add('argentum-mobile-menu-close');
-        closeBtn.innerHTML = '✕';
-
-        const navLinks = nav ? nav.querySelectorAll('a') : [];
-        const ul = document.createElement('ul');
-
-        navLinks.forEach(function(link) {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.textContent.trim();
-            a.addEventListener('click', closeMenu);
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-
-        mobileMenu.appendChild(closeBtn);
-        mobileMenu.appendChild(ul);
-        document.body.appendChild(mobileMenu);
-
-        const actions = header.querySelector('.argentum-header-actions');
-        if (actions) {
-            header.insertBefore(hamburger, actions);
-        } else {
-            header.appendChild(hamburger);
-        }
-
-        function openMenu() {
-            mobileMenu.style.display = 'block';
-            overlay.style.display = 'block';
-            document.body.classList.add('argentum-menu-open');
-            requestAnimationFrame(function() {
-                mobileMenu.style.transform = 'translateX(0)';
-                overlay.style.opacity = '1';
-            });
-        }
-
-        function closeMenu() {
-            mobileMenu.style.transform = 'translateX(100%)';
-            overlay.style.opacity = '0';
-            document.body.classList.remove('argentum-menu-open');
-            setTimeout(function() {
-                mobileMenu.style.display = 'none';
-                overlay.style.display = 'none';
-            }, 300);
-        }
-
-        hamburger.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeMenu();
-        });
-
-        function checkSize() {
-            hamburger.style.display = window.innerWidth <= 1024 ? 'block' : 'none';
-            if (window.innerWidth > 1024) closeMenu();
-        }
-
-        checkSize();
-        window.addEventListener('resize', checkSize);
+    if (actions) {
+        actions.appendChild(hamburger);
     }
+
+    const overlay = document.createElement('div');
+    overlay.classList.add('argentum-mobile-overlay');
+    document.body.appendChild(overlay);
+
+    const mobileMenu = document.createElement('div');
+    mobileMenu.classList.add('argentum-mobile-menu');
+    mobileMenu.style.cssText = 'display:none; transform: translateX(100%); transition: transform 0.3s ease;';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('argentum-mobile-menu-close');
+    closeBtn.innerHTML = '✕';
+
+    const navLinks = nav ? nav.querySelectorAll('a') : [];
+    const ul = document.createElement('ul');
+
+    navLinks.forEach(function(link) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.textContent.trim();
+        a.addEventListener('click', closeMenu);
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+
+    mobileMenu.appendChild(closeBtn);
+    mobileMenu.appendChild(ul);
+    document.body.appendChild(mobileMenu);
+
+    function openMenu() {
+        mobileMenu.style.display = 'block';
+        overlay.style.display = 'block';
+        document.body.classList.add('argentum-menu-open');
+        requestAnimationFrame(function() {
+            mobileMenu.style.transform = 'translateX(0)';
+            overlay.style.opacity = '1';
+        });
+    }
+
+    function closeMenu() {
+        mobileMenu.style.transform = 'translateX(100%)';
+        overlay.style.opacity = '0';
+        document.body.classList.remove('argentum-menu-open');
+        setTimeout(function() {
+            mobileMenu.style.display = 'none';
+            overlay.style.display = 'none';
+        }, 300);
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+}
     
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add_to_cart_button') || 
