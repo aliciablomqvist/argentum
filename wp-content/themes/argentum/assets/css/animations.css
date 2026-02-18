@@ -1551,14 +1551,103 @@ body.argentum-menu-open {
         max-width: 100% !important;
     }
 
-     .wp-block-cover h1,.wp-block-heading,
-    .hero-section h1, .wp-block-cover p, .wp-block-cover .wp-block-buttons {
+@media (max-width: 768px) {
+    .wp-block-cover {
+        min-height: 85vh !important;
+        background-attachment: scroll !important;
+    }
+
+    .wp-block-cover h1,
+    .wp-block-cover .wp-block-heading,
+    .hero-section h1,
+    .wp-block-cover h2 {
+        font-size: 2.8rem !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.1 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+
+    .wp-block-cover p {
+        font-size: 1rem !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.6 !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .wp-block-cover .wp-block-buttons {
         display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
     }
+
+    .wp-block-cover .wp-block-button__link,
+    .wp-block-cover .wp-element-button {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+        letter-spacing: 0.1em !important;
+        padding: 0.9rem 2rem !important;
+        display: inline-block !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+    }
+
+    @media (max-width: 480px) {
+        .wp-block-cover h1,
+        .wp-block-cover .wp-block-heading {
+            font-size: 2.2rem !important;
+        }
+
+        .wp-block-cover p {
+            font-size: 0.9rem !important;
+        }
+
+        .wp-block-cover .wp-block-button__link {
+            padding: 0.8rem 1.5rem !important;
+            font-size: 0.85rem !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .woocommerce h1.page-title,
+    .woocommerce-page h1.page-title,
+    body.woocommerce h1,
+    body.woocommerce-page h1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 0.05em !important;
+        text-align: center !important;
+        display: block !important;
+        writing-mode: horizontal-tb !important;
+        transform: none !important;
+    }
+
+    .woocommerce-cart h1,
+    .woocommerce-page h1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 0.05em !important;
+        text-align: center !important;
+        display: block !important;
+        writing-mode: horizontal-tb !important;
+        transform: none !important;
+    }
+}
 
     .wp-block-cover .wp-block-button__link,
     .wp-block-cover .wp-element-button {
