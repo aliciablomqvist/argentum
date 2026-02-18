@@ -1522,6 +1522,7 @@ body.argentum-menu-open {
     .wp-block-cover {
         min-height: 85vh !important;
         background-attachment: scroll !important;
+        
     }
 
     .wp-block-cover h1,
@@ -1550,7 +1551,8 @@ body.argentum-menu-open {
         max-width: 100% !important;
     }
 
-    .wp-block-cover .wp-block-buttons {
+     .wp-block-cover h1,.wp-block-heading,
+    .hero-section h1, .wp-block-cover p, .wp-block-cover .wp-block-buttons {
         display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
