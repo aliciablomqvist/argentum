@@ -1518,8 +1518,12 @@ body.argentum-menu-open {
     .argentum-nav {
         display: none !important;
     }
-}
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
+    .wp-block-cover {
+        min-height: 85vh !important;
+        background-attachment: scroll !important;
+    }
+
     .wp-block-cover h1,
     .wp-block-cover .wp-block-heading,
     .hero-section h1 {
@@ -1531,11 +1535,19 @@ body.argentum-menu-open {
         writing-mode: horizontal-tb !important;
         text-orientation: mixed !important;
         transform: none !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
     }
 
     .wp-block-cover p {
         font-size: 1rem !important;
         letter-spacing: 0.05em !important;
+        line-height: 1.6 !important;
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .wp-block-cover .wp-block-buttons {
@@ -1556,15 +1568,22 @@ body.argentum-menu-open {
         display: inline-block !important;
         width: auto !important;
         white-space: nowrap !important;
+        text-align: center !important;
     }
-    
-    .wp-block-cover {
-        min-height: 85vh !important;
-    }
-}
 
-@media (max-width: 480px) {
-    .wp-block-cover h1 {
-        font-size: 2.2rem !important;
+    @media (max-width: 480px) {
+        .wp-block-cover h1,
+        .wp-block-cover .wp-block-heading {
+            font-size: 2.2rem !important;
+        }
+
+        .wp-block-cover p {
+            font-size: 0.9rem !important;
+        }
+
+        .wp-block-cover .wp-block-button__link {
+            padding: 0.8rem 1.5rem !important;
+            font-size: 0.85rem !important;
+        }
     }
 }
