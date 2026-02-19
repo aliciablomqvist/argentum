@@ -235,3 +235,11 @@
         text-align: center;
     }
 }
+
+.custom-flexbox {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
