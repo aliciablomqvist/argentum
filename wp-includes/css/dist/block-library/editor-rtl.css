@@ -365,7 +365,7 @@ html :where(.wp-block-column){
   flex:1 1 auto;
 }
 .wp-block-embed .components-placeholder__error{
-  word-break:break-word;
+
 }
 
 .wp-block-post-content .wp-block-embed__learn-more a{
@@ -2171,7 +2171,7 @@ body.editor-styles-wrapper .wp-block-navigation__responsive-container.is-menu-op
   width:auto;
 }
 .wp-block[data-align=center]>.wp-block-table td,.wp-block[data-align=center]>.wp-block-table th,.wp-block[data-align=left]>.wp-block-table td,.wp-block[data-align=left]>.wp-block-table th,.wp-block[data-align=right]>.wp-block-table td,.wp-block[data-align=right]>.wp-block-table th{
-  word-break:break-word;
+
 }
 .wp-block[data-align=center]>.wp-block-table{
   text-align:initial;

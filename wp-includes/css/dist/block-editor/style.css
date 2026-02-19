@@ -1953,7 +1953,7 @@ iframe[name=editor-canvas]{
   justify-content:center;
   padding:8px;
   width:100%;
-  word-break:break-word;
+
 }
 @media not (prefers-reduced-motion){
   .components-button.block-editor-block-types-list__item{

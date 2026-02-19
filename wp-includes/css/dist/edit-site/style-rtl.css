@@ -2029,7 +2029,7 @@ input[type=radio]:not(:checked):hover~.fields-create-template-part-modal__area-r
 }
 
 .fields-controls__slug .fields-controls__slug-help-link{
-  word-break:break-word;
+
 }
 
 .fields-controls__slug .fields-controls__slug-help{

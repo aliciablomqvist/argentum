@@ -1,6 +1,6 @@
 .wp-block-post-title{
   box-sizing:border-box;
-  word-break:break-word;
+
 }
 .wp-block-post-title :where(a){
   display:inline-block;

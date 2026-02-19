@@ -1505,7 +1505,7 @@ body.is-fullscreen-mode .interface-interface-skeleton{
   line-height:20px;
   margin:0;
   row-gap:4px;
-  word-break:break-word;
+
 }
 .editor-post-card-panel__icon{
   flex:0 0 24px;
@@ -1785,7 +1785,7 @@ body.is-fullscreen-mode .interface-interface-skeleton{
   color:#757575;
   display:block;
   font-size:12px;
-  word-break:break-word;
+
 }
 
 .editor-post-publish-panel__header-cancel-button,.editor-post-publish-panel__header-publish-button{
@@ -1853,7 +1853,7 @@ body.is-fullscreen-mode .interface-interface-skeleton{
 .post-publish-panel__postpublish .components-panel__body{
   border-bottom:1px solid #e0e0e0;
   border-top:none;
-  word-break:break-word;
+
 }
 
 .post-publish-panel__postpublish-buttons{
@@ -2187,7 +2187,7 @@ textarea.editor-post-text-editor:-ms-input-placeholder{
 }
 .editor-post-url__front-page-link,.editor-post-url__link{
   direction:ltr;
-  word-break:break-word;
+
 }
 .editor-post-url__front-page-link{
   border-radius:2px;
@@ -2213,7 +2213,7 @@ textarea.editor-post-text-editor:-ms-input-placeholder{
 }
 
 .editor-post-parent__panel-toggle,.editor-post-url__panel-toggle{
-  word-break:break-word;
+
 }
 
 .editor-post-url__intro{
