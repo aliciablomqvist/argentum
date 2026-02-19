@@ -1509,6 +1509,18 @@ ul.products li.product img {
 body.argentum-menu-open {
     overflow: hidden;
 }
+
+.wp-block-cover h1,
+.wp-block-cover h2,
+.wp-block-cover .wp-block-heading {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: block !important;
+}
+
 /* 
 @media (max-width: 1024px) {
     .argentum-hamburger {
