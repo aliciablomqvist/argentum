@@ -244,3 +244,26 @@
   height: 50vh;
   font-size: 8vw;
 }
+
+@media (max-width:768px){
+
+  .woocommerce h1,
+  .woocommerce-page h1,
+  .wp-block-post-title,
+  .entry-title{
+      width:100% !important;
+      max-width:100% !important;
+      writing-mode:horizontal-tb !important;
+      white-space:normal !important;
+      word-break:normal !important;
+      text-align:center;
+  }
+
+  .wp-site-blocks,
+  main,
+  .wp-block-group{
+      width:100% !important;
+      max-width:100% !important;
+  }
+
+}
