@@ -5,6 +5,25 @@ html {
     scroll-padding-top: 100px;
 }
 
+@media (max-width:1024px){
+  .wp-block-columns{
+     flex-direction:column;
+  }
+
+  .wp-block-column{
+     width:100% !important;
+     flex-basis:100% !important;
+  }
+}
+
+@media (max-width:768px){
+  .hero-section h1,
+  .wp-block-cover h1{
+     font-size:2.5rem !important;
+     line-height:1.1;
+  }
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
