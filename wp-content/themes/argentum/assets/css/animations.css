@@ -1721,3 +1721,9 @@ body.woocommerce-cart .woocommerce-error,
 body.woocommerce-checkout .woocommerce-error {
     display: block !important;
 }
+
+.has-global-padding {
+     padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 20px !important;
+}
